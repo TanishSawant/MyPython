@@ -1,0 +1,58 @@
+{%extends "base.html"%} {%block title%}Login Page{%endblock%} {%block content%}
+<br> {% with messages = get_flashed_messages() %} {%if messages%} {%for msg in messages%}
+<p>{{msg}}</p>
+{%endfor%} {%endif%} {% endwith %}
+
+<div class="login-page-div">
+
+    <form action="#" , method="POST">
+        <div class="form-row">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="First name" name="user_first_name" required=true>
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Last name" name="user_last_name">
+            </div>
+            <input type="submit" id="submit_1" value="submit">
+        </div>
+    </form>
+
+</div>
+
+<style>
+    .login-page-div {
+        height: 100vh;
+        width: 100%;
+        background: #7BC8D8;
+        background: -webkit-radial-gradient(bottom left, #7BC8D8, #63449C);
+        background: -moz-radial-gradient(bottom left, #7BC8D8, #63449C);
+        background: radial-gradient(to top right, #7BC8D8, #63449C);
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        flex-grow: initial;
+    }
+    
+    .form-control {
+        width: 400px;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(50);
+        border-radius: 30px;
+        height: 7vh;
+    }
+    
+    #submit_1 {
+        width: 150px;
+        border-radius: 25px;
+        transform: translateX(20px);
+    }
+    
+    #submit_1:hover {
+        background-color: lightgray;
+    }
+</style>
+{% endblock %}

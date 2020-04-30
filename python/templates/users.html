@@ -1,0 +1,46 @@
+{% extends "base.html" %} {% block title %}User{% endblock %} {%block content%}
+
+<br> {% with messages = get_flashed_messages() %} {%if messages%} {%for msg in messages%}
+<h1>{{msg}}</h1>
+{%endfor%} {%endif%} {% endwith %}
+
+<div class="user-landing-page">
+
+    <form action="#" method="post">
+        <input type="email" name="email" class="input_email" value="{{email if email}}" placeholder="Enter email" required=true>
+        <input type="submit" id="email_submit" value="submit">
+    </form>
+
+</div>
+
+<style>
+    .user-landing-page {
+        width: initial;
+        height: 100vh;
+        background: #EF51AE;
+        background: -webkit-radial-gradient(bottom left, #EF51AE, #E6B956);
+        background: -moz-radial-gradient(bottom left, #EF51AE, #E6B956);
+        background: radial-gradient(to top right, #EF51AE, #E6B956);
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .input_email {
+        width: 300px;
+        height: 7vh;
+        border-radius: 35px;
+        border: wheat;
+    }
+    
+    #email_submit {
+        width: 150px;
+        height: 7vh;
+        border-radius: 30px;
+        transform: translateX(20px);
+    }
+</style>
+
+{%endblock%}
